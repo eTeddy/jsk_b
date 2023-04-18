@@ -14,11 +14,11 @@
 }
 
 .clock {
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
   background-color: #dad2ba;
   border-radius: 100%;
-  border: 10px solid #725111;
+  border: 5px solid #725111;
   box-shadow: 1px 1px 4px rgba(0,0,0,.7);
   position: relative;
   box-shadow: 10px 10px 10px 0 #333333, 0 10px 30px 0 #333333;

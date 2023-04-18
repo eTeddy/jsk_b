@@ -13,7 +13,7 @@ export const Weight = () => {
     inputEl.addEventListener("input", updateText);
 
     if (inputEl.value >= 1000) {
-      errorEl.innerText = "Limit to 1000 lbs!";
+      errorEl.innerText = "Limit to 999 lbs!";
     }
 
     if (inputEl.value <= 0 || isNaN(inputEl.value)) {
@@ -48,7 +48,7 @@ export const Weight = () => {
       <div className="weight_container">
         <h2>lbs ➡️ kg</h2>
         <div className="input_container">
-          <input className='input' onChange={updateResults} type="number" id="input" class="input" step=".1" placeholder="Enter weight (lbs)" />
+          <input className='input' onChange={updateResults} type="number" max="999" id="input" class="input" step=".1" placeholder="Enter weight (lbs)" />
         </div>
         <p className='weight_result'><span className='weight_result' id="displayText" ></span> (lbs)</p>
         <p>⬇️</p>
