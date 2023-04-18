@@ -11,7 +11,7 @@ body {
   padding: 0px;
 }
 #joke_title {
-  margin: 0 auto 10px auto;
+  margin: 10px;
 }
 #joke_content {
   background: #dad2ba;
@@ -37,4 +37,3 @@ body {
   font-weight: bold;
   margin: 0px auto 10px auto;
 } 
-
