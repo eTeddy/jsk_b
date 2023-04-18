@@ -12,34 +12,26 @@ export const Weight = () => {
 
     inputEl.addEventListener("input", updateText);
 
-    if (inputEl.value >= 1000) {
+    if (inputEl.value >= 999) {
       errorEl.innerText = "Limit to 999 lbs!";
+      inputEl.value = 999
     }
 
+
     if (inputEl.value <= 0 || isNaN(inputEl.value)) {
-      
-      /*
-      clearTimeout(errorTime);
-      errorTime = setTimeout(() => {
-        errorEl.innerText = "";
-        inputEl.value = "";
-      }, 2000);
-      */
+      errorEl.innerText = "Please enter a valid number!";
     } else {
       resultEl.innerText = (+inputEl.value / 2.2).toFixed(2);
-      /*
-      clearTimeout(resultTime);
-      resultTime = setTimeout(() => {
-        resultEl.innerText = "";
-        inputEl.value = "";
-      }, 10000);
-      */
     }
   }
 
   const updateText = (event) => {
     const displayElement = document.getElementById("displayText");
+    if (event.target.value > 999) {
+      event.target.value = 999
+    }
     displayElement.innerHTML = event.target.value;
+
   }
 
   return (
@@ -47,9 +39,11 @@ export const Weight = () => {
       <h1 class="title">Weight Converter</h1>      
       <div className="weight_container">
         <h2>lbs ➡️ kg</h2>
+
         <div className="input_container">
-          <input className='input' onChange={updateResults} type="number" maxlength="3" id="input" class="input" step=".1" placeholder="Enter weight (lbs)" />
+          <input className='input' onChange={updateResults} type="number" max="999" id="input" class="input" step=".1" placeholder="Enter weight (lbs)" />
         </div>
+
         <p className='weight_result'><span className='weight_result' id="displayText" ></span> (lbs)</p>
         <p>⬇️</p>
         <p className='weight_result'><span className='weight_result' id='result'></span> (kg)</p>
